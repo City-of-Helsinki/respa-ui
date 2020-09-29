@@ -85,7 +85,7 @@
     "redux-thunk": "2.2.0",
     "reselect": "2.5.4",
     "seamless-immutable": "7.1.4",
-    "serialize-javascript": "2.1.2",
+    "serialize-javascript": "3.1.0",
     "validator": "6.1.0"
   },
   "devDependencies": {
