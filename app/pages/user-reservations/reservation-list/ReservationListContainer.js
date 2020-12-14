@@ -1,6 +1,5 @@
 import PropTypes from 'prop-types';
 import React, { Component } from 'react';
-import Loader from 'react-loader';
 import { connect } from 'react-redux';
 
 import Pagination from '../../../../src/common/pagination/Pagination';
@@ -31,31 +30,25 @@ class UnconnectedReservationListContainer extends Component {
   render() {
     const {
       emptyMessage,
-      loading,
       reservations,
       page,
       pages,
       t,
     } = this.props;
 
+    if (reservations.length <= 0) return <p>{emptyMessage || t('ReservationListContainer.emptyMessage')}</p>;
+
     return (
-      <Loader loaded={!loading}>
-        {reservations.length > 0
-          ? (
-            <div>
-              <ul className="reservation-list">
-                {reservations.map(this.renderReservationListItem)}
-              </ul>
-              <Pagination
-                onChange={this.props.onPageChange}
-                page={page}
-                pages={pages}
-              />
-            </div>
-          )
-          : <p>{emptyMessage || t('ReservationListContainer.emptyMessage')}</p>
-        }
-      </Loader>
+      <>
+        <ul className="reservation-list">
+          {reservations.map(this.renderReservationListItem)}
+        </ul>
+        <Pagination
+          onChange={this.props.onPageChange}
+          page={page}
+          pages={pages}
+        />
+      </>
     );
   }
 }
@@ -63,7 +56,6 @@ class UnconnectedReservationListContainer extends Component {
 UnconnectedReservationListContainer.propTypes = {
   emptyMessage: PropTypes.string,
   isAdmin: PropTypes.bool.isRequired,
-  loading: PropTypes.bool.isRequired,
   reservations: PropTypes.array.isRequired,
   t: PropTypes.func.isRequired,
   onPageChange: PropTypes.func.isRequired,

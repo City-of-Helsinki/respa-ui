@@ -1,14 +1,13 @@
 footer {
   background-color: $brand-primary;
-  color: #fff;
-  z-index: z-index(footer);
+  color: $white;
   margin-top: units(2.5);
   text-align: center;
   font-size: 1.6rem;
 
   .brand-link {
     display: block;
-    color: #fff;
+    color: $white;
     font-size: 2.5rem;
     line-height: 50px;
     font-weight: bold;
@@ -27,12 +26,12 @@ footer {
   }
 
   .about-link {
-    color: #fff;
+    color: $white;
     font-weight: bold;
   }
 
   a {
-    color: #fff;
+    color: $white;
   }
 
   a:hover {

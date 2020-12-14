@@ -39,7 +39,6 @@ class MainNavbar extends React.Component {
       <Navbar
         className="app-MainNavbar"
         expanded={this.state.expanded}
-        fluid
         onToggle={() => this.toggleCollapse()}
       >
         <Navbar.Header>

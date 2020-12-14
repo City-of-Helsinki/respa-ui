@@ -74,7 +74,7 @@ class ReservationListItem extends Component {
             {this.renderImage(getMainImage(resource.images))}
           </Link>
         </div>
-        <div className="col-xs-8 col-md-6 col-lg-7 reservation-details">
+        <div className="col-xs-12 col-md-6 col-lg-7 reservation-details">
           <div className="reservation-state-label-container">
             {hasProducts(resource) && !resource.staff_event && price > 0 && (
               <InfoLabel
@@ -125,7 +125,7 @@ class ReservationListItem extends Component {
             </div>
           )}
         </div>
-        <div className="col-xs-4 col-md-3 col-lg-3 action-container">
+        <div className="col-xs-12 col-md-3 col-lg-3 action-container">
           <ReservationControls
             isAdmin={isAdmin}
             reservation={reservation}

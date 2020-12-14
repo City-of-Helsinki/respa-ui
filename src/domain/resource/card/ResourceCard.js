@@ -128,6 +128,7 @@ class ResourceCard extends React.Component {
         <div className="app-resourceCard2__info">
           {resource.type && (
             <ResourceCardInfoCell
+              className="app-resourceCard2__info-cell"
               icon={iconHome}
               onClick={() => onFilterClick('search', typeName)}
               text={typeName}

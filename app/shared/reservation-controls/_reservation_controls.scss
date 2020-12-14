@@ -1,7 +1,6 @@
 .app-ReservationControls {
   $vertical-spacing: units(1.5);
-  $container-min-height: 180px;
-  $button-gap: 14px;
+  $button-gap: units(0.75);
   $button-width: 100px;
 
   align-content: end;
@@ -9,8 +8,7 @@
   grid-auto-rows: max-content;
   grid-template-columns: 1fr;
   grid-gap: $button-gap;
-  padding: $vertical-spacing 0;
-  min-height: $container-min-height;
+  width: 100%;
 
   @media (min-width: $screen-sm-min) {
     grid-template-columns: 1fr 1fr;

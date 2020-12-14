@@ -23,21 +23,32 @@ $purposeCellHeight: 350px;
 
   .app-HomeSearchBox {
     margin: units(4) 0;
+    
     &__textfield {
       background-color: $white;
       border-width: 2px;
       display: inline-block;
-      padding: units(0.5);
-      max-width: 500px;
+      padding: units(0.5) units(1);
+      width: 32em;
 
-      @media (max-width: $screen-md-min) {
-        max-width: 300px;
-      }
     }
-    button {
+    
+    &__button {
       display: inline-block;
       margin-left: units(0.75);
       text-transform: uppercase;
+    }
+    
+    @media (max-width: $screen-sm-min) {
+      &__textfield {
+        width: 100%;
+      }
+      
+      &__button {
+        width: 100%;
+        margin-left: 0;
+        margin-top: units(0.75);
+      }
     }
   }
 

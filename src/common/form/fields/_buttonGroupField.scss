@@ -10,6 +10,10 @@
     font-size: 1.4rem;
     font-weight: 500;
 
+    &:last-child {
+      margin-right: 0 !important;
+    }
+
     &.active,
     &:hover {
       background-color: #000000 !important;

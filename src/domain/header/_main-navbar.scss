@@ -3,6 +3,8 @@ $externalIconMarginLeft: units(0.5);
 .app-MainNavbar {
   background-color: $theme-primary-dark;
   margin-bottom: 0;
+  max-height: 100vh;
+  
   .navbar-nav li,
   .navbar-nav > .active {
     a {
@@ -58,5 +60,9 @@ $externalIconMarginLeft: units(0.5);
   button:focus,
   button:active {
     outline: 2px solid $theme-primary-light;
+  }
+
+  @media (max-width: $screen-md-min) {
+    overflow-y: scroll;
   }
 }

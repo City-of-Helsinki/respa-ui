@@ -1,8 +1,9 @@
 .app-AccessibilityMenu {
     padding: units(1) units(2);
     width: 420px;
+    min-width: 420px;
+    max-width: 100vw;
     overflow: hidden;
-    max-height: 70vh;
     
     &__btn-wrapper {
         display: flex;
@@ -19,7 +20,7 @@
     }
 
     &__checkbox {
-        margin-bottom: units(1.5);
+        margin-bottom: units(1);
 
         input {
             margin-top: 0;
@@ -28,6 +29,15 @@
         label {
             font-weight: normal;
             padding-left: units(4) !important;
+        }
+    }
+    
+    @media (max-width: $screen-md-min) {
+        width: auto;
+        min-width: unset;
+        
+        &__checkbox label{
+            color: $white !important;
         }
     }
 }

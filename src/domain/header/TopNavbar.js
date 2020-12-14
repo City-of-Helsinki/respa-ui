@@ -52,7 +52,7 @@ class TopNavbar extends Component {
     const fontSizeControl = isFontSizeControlEnabled ? <HeaderFontSizeControl /> : null;
 
     return (
-      <Navbar className="app-TopNavbar" fluid>
+      <Navbar className="app-TopNavbar">
         <Navbar.Header>
           <Navbar.Brand>
             <Link to="/">

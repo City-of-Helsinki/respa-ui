@@ -1,16 +1,21 @@
-$reservation-list-label-height: units(1.5);
+$reservation-list-item-height: 200px;
+$reservation-list-item-spacing: units(1);
 
 .reservation-list {
   list-style: none;
   margin: 0;
   padding: 0;
-
+  
   .reservation {
     background-color: $white;
     position: relative;
-    margin-bottom: units(3);
-    min-height: 180px;
+    height: $reservation-list-item-height;
     padding: 0;
+    padding-right: units(0.5);
+
+    &:not(:last-child) {
+      margin-bottom: units(2);
+    }
 
     @media (max-width: $screen-xs-max) {
       min-height: 230px;
@@ -18,31 +23,31 @@ $reservation-list-label-height: units(1.5);
 
     .image-container {
       background-color: #ebedf1;
-      min-height: 180px;
-      max-width: 180px;
+      height: 100%;
+      padding: 0;
 
       @media (max-width: $screen-md-min) {
         display: none;
       }
 
       img {
-        margin-left: calc(#{units(0.75)} * -1);
-
-        height: 180px;
-        width: 180px;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
       }
     }
 
     .reservation-details {
-      margin-top: 10px;
-      min-height: 180px;
+      padding: $reservation-list-item-spacing;
 
       .reservation-state-label-container {
-        font-size: 1.8rem;
-        margin-bottom: 8px;
-        margin-top: -8px;
+
         width: 100%;
         display: flex;
+
+        & > * {
+          margin-right: units(0.75);
+        }
       }
 
       .location, .timeslot {
@@ -62,8 +67,10 @@ $reservation-list-label-height: units(1.5);
     }
 
     .action-container {
-      min-height: 180px;
-
+      display: flex;
+      height: 100%;
+      padding: $reservation-list-item-spacing;
+      
       .buttons {
         position: absolute;
         bottom: 0;
@@ -76,14 +83,18 @@ $reservation-list-label-height: units(1.5);
           @media (max-width: $screen-md-max) {
             margin-bottom: units(0.75);
           }
-
+          
           @media (max-width: $screen-xs-max) {
             margin-left: calc(#{units(1)} * -1);
           }
         }
       }
     }
-
+    
+    @media (max-width: $screen-sm-max) {
+      height: auto;
+      padding: units(0.5);
+    }
 
     a {
       text-decoration: none;

@@ -140,7 +140,7 @@ class ManageReservationsFilters extends React.Component {
       <div className="app-ManageReservationsFilters">
         <Grid>
           <Row>
-            <Col md={3}>
+            <Col md={4} sm={3}>
               <ButtonGroupField
                 id="stateField"
                 label={t('ManageReservationsFilters.statusLabel')}
@@ -150,7 +150,7 @@ class ManageReservationsFilters extends React.Component {
                 value={state ? state.split(',') : null}
               />
             </Col>
-            <Col md={5}>
+            <Col md={4} sm={4}>
               <div className="app-ManageReservationsFilters__datePickers">
                 <DateField
                   id="startDateField"
@@ -173,7 +173,7 @@ class ManageReservationsFilters extends React.Component {
                 />
               </div>
             </Col>
-            <Col md={4}>
+            <Col md={4} sm={5}>
               <TextField
                 id="searchField"
                 label={t('ManageReservationsFilters.searchLabel')}

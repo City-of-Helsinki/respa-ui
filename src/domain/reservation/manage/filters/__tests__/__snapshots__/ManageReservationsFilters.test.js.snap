@@ -16,7 +16,8 @@ exports[`ManageReservationsFilters renders correctly 1`] = `
       <Col
         bsClass="col"
         componentClass="div"
-        md={3}
+        md={4}
+        sm={3}
       >
         <ButtonGroupField
           id="stateField"
@@ -49,7 +50,8 @@ exports[`ManageReservationsFilters renders correctly 1`] = `
       <Col
         bsClass="col"
         componentClass="div"
-        md={5}
+        md={4}
+        sm={4}
       >
         <div
           className="app-ManageReservationsFilters__datePickers"
@@ -79,6 +81,7 @@ exports[`ManageReservationsFilters renders correctly 1`] = `
         bsClass="col"
         componentClass="div"
         md={4}
+        sm={5}
       >
         <TextField
           id="searchField"

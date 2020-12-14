@@ -14,6 +14,7 @@ const PageWrapper = ({
   return (
     <div className={classNames('app-PageWrapper', { 'app-PageWrapper__transparent': transparent })}>
       <Grid
+        className="app-PageWrapper__grid"
         fluid={fluid}
       >
         <Helmet>

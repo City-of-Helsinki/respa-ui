@@ -83,7 +83,6 @@ class ReservationInfoModal extends Component {
       reservation.state === RESERVATION_STATE.CONFIRMED
       || (reservation.state === RESERVATION_STATE.REQUESTED && !isAdmin)
     );
-
     const paymentLabel = constants.RESERVATION_PAYMENT_LABELS[reservation.state];
     const stateLabel = constants.RESERVATION_STATE_LABELS[reservation.state];
 
@@ -107,10 +106,7 @@ class ReservationInfoModal extends Component {
                   && !reservation.staffEvent && (
                     <InfoLabel labelStyle={paymentLabel.labelBsStyle} labelText={t(paymentLabel.labelTextId)} />
                 )}
-                {reservation.needManualConfirmation
-                  && reservation.state !== 'cancelled' && (
-                    <InfoLabel labelStyle={stateLabel.labelBsStyle} labelText={t(stateLabel.labelTextId)} />
-                )}
+                {stateLabel && <InfoLabel labelStyle={stateLabel.labelBsStyle} labelText={t(stateLabel.labelTextId)} />}
               </div>
               <ReservationEditForm
                 enableReinitialize

@@ -359,7 +359,7 @@
   "SearchFilters.dateLabel": "When?",
   "SearchFilters.advancedSearch": "Advanced search",
   "SearchFilters.chargeLabel": "Premises free of charge",
-  "SearchFilters.peopleCapacityLabel": "Minimum number of people permitted\"",
+  "SearchFilters.peopleCapacityLabel": "Minimum number of people permitted",
   "SearchFilters.municipalityLabel": "Municipality",
   "SearchFilters.purposeLabel": "Purpose of use",
   "SearchFilters.resetButton": "Reset filters",

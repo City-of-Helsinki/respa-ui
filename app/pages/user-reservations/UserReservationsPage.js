@@ -348,51 +348,48 @@ class UnconnectedUserReservationsPage extends Component {
           title={t('UserReservationsPage.title')}
           transparent={false}
         >
-          <div>
-            <h1>{t('UserReservationsPage.title')}</h1>
-            <div className="app-UserReservationPage__tabs">
-              <button
-                aria-selected={this.tab === TABS.UPCOMING}
-                className={classNames('app-UserReservationPage__tab', {
-                  'app-UserReservationPage__tab--active':
-                    this.tab === TABS.UPCOMING,
-                })}
-                onClick={() => this.handleTabChange(TABS.UPCOMING)}
-                role="tab"
-                type="button"
-              >
-                {t('ReservationListContainer.comingReservations')}
-                {' '}
-                {!upcomingReservationLoading
-                  ? `(${upcomingReservationCount})`
-                  : ''}
-              </button>
-              <button
-                aria-selected={this.tab === TABS.PAST}
-                className={classNames('app-UserReservationPage__tab', {
-                  'app-UserReservationPage__tab--active':
-                    this.tab === TABS.PAST,
-                })}
-                onClick={() => this.handleTabChange(TABS.PAST)}
-                role="tab"
-                type="button"
-              >
-                {t('ReservationListContainer.pastReservations')}
-              </button>
-            </div>
-            <Loader loaded={!this.isLoading}>
-              {/* In order to avoid mounting multiple instances of the
-                  same component, we change data instead of component
-                  instance. */}
-              <ReservationList
-                loading={this.isLoading}
-                onPageChange={this.handlePageChange}
-                page={this.page}
-                pages={this.pages}
-                reservations={this.reservations}
-              />
-            </Loader>
+          <h1>{t('UserReservationsPage.title')}</h1>
+          <div className="app-UserReservationPage__tabs">
+            <button
+              aria-selected={this.tab === TABS.UPCOMING}
+              className={classNames('app-UserReservationPage__tab', {
+                'app-UserReservationPage__tab--active':
+                  this.tab === TABS.UPCOMING,
+              })}
+              onClick={() => this.handleTabChange(TABS.UPCOMING)}
+              role="tab"
+              type="button"
+            >
+              {t('ReservationListContainer.comingReservations')}
+              {' '}
+              {!upcomingReservationLoading
+                ? `(${upcomingReservationCount})`
+                : '(...)'}
+            </button>
+            <button
+              aria-selected={this.tab === TABS.PAST}
+              className={classNames('app-UserReservationPage__tab', {
+                'app-UserReservationPage__tab--active':
+                  this.tab === TABS.PAST,
+              })}
+              onClick={() => this.handleTabChange(TABS.PAST)}
+              role="tab"
+              type="button"
+            >
+              {t('ReservationListContainer.pastReservations')}
+            </button>
           </div>
+          <Loader loaded={!this.isLoading}>
+            {/* In order to avoid mounting multiple instances of the
+                same component, we change data instead of component
+                instance. */}
+            <ReservationList
+              onPageChange={this.handlePageChange}
+              page={this.page}
+              pages={this.pages}
+              reservations={this.reservations}
+            />
+          </Loader>
           <ReservationCancelModal />
           <ReservationInfoModal />
         </PageWrapper>
